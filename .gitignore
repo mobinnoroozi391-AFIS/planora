@@ -1,0 +1,19 @@
+﻿# Planora backup files
+index-backup.html
+index-before-cloud-sync.html
+index-before-dashboard-cleanup.html
+index-corrupted-encoding.html
+
+# Local development
+node_modules/
+.npm/
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
