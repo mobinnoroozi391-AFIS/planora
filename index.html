@@ -1254,6 +1254,152 @@ window.PlanoraAuth = {
 
 window.dispatchEvent(new CustomEvent("planora-supabase-ready"));
 </script>
+
+<style>
+/* ===== Planora Auth Premium UI ===== */
+
+#planoraAuthOverlay{
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  background:
+    radial-gradient(circle at 20% 20%,rgba(99,102,241,.16),transparent 35%),
+    radial-gradient(circle at 80% 80%,rgba(139,92,246,.12),transparent 35%),
+    rgba(5,8,20,.78) !important;
+}
+
+#planoraAuthOverlay > div{
+  width:min(430px,calc(100vw - 32px)) !important;
+  padding:34px !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  border-radius:26px !important;
+  background:
+    linear-gradient(145deg,rgba(25,31,55,.96),rgba(13,17,32,.98)) !important;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.55),
+    0 0 0 1px rgba(255,255,255,.03) inset !important;
+  animation:planoraAuthIn .45s cubic-bezier(.2,.8,.2,1);
+}
+
+#planoraAuthOverlay h2{
+  font-size:30px !important;
+  font-weight:800 !important;
+  letter-spacing:-.8px;
+  margin-bottom:8px !important;
+}
+
+#planoraAuthOverlay h2::before{
+  content:"✦ ";
+  background:linear-gradient(135deg,#8b5cf6,#6366f1);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+
+#planoraAuthOverlay input{
+  width:100% !important;
+  height:52px !important;
+  padding:0 16px !important;
+  border-radius:14px !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  background:rgba(255,255,255,.045) !important;
+  color:#fff !important;
+  outline:none !important;
+  transition:.2s ease;
+  box-sizing:border-box;
+}
+
+#planoraAuthOverlay input::placeholder{
+  color:#7f879d !important;
+}
+
+#planoraAuthOverlay input:focus{
+  border-color:rgba(129,140,248,.75) !important;
+  background:rgba(99,102,241,.07) !important;
+  box-shadow:0 0 0 4px rgba(99,102,241,.12) !important;
+}
+
+#planoraAuthOverlay button{
+  min-height:50px;
+  border-radius:14px !important;
+  transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;
+}
+
+#planoraAuthOverlay button:hover{
+  transform:translateY(-1px);
+}
+
+#planoraAuthOverlay button[type="submit"]{
+  border:0 !important;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6) !important;
+  color:#fff !important;
+  font-weight:800 !important;
+  box-shadow:0 10px 25px rgba(99,102,241,.28);
+}
+
+#planoraAuthOverlay button[type="submit"]:hover{
+  box-shadow:0 14px 32px rgba(99,102,241,.40);
+}
+
+#planoraAuthOverlay button[data-auth-tab]{
+  background:transparent !important;
+  color:#8d96ad !important;
+  border:0 !important;
+  min-height:42px;
+}
+
+#planoraAuthOverlay button[data-auth-tab].active{
+  color:#fff !important;
+  background:rgba(99,102,241,.12) !important;
+}
+
+.planora-auth-brand{
+  text-align:center;
+  margin-bottom:26px;
+}
+
+.planora-auth-logo{
+  width:62px;
+  height:62px;
+  margin:0 auto 15px;
+  border-radius:19px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px;
+  font-weight:900;
+  color:#fff;
+  background:linear-gradient(135deg,#6366f1,#8b5cf6);
+  box-shadow:0 15px 35px rgba(99,102,241,.32);
+}
+
+.planora-auth-subtitle{
+  color:#8d96ad;
+  font-size:13px;
+  line-height:1.8;
+}
+
+@keyframes planoraAuthIn{
+  from{
+    opacity:0;
+    transform:translateY(18px) scale(.97);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+}
+
+@media(max-width:480px){
+  #planoraAuthOverlay > div{
+    padding:26px 20px !important;
+    border-radius:22px !important;
+  }
+
+  #planoraAuthOverlay h2{
+    font-size:25px !important;
+  }
+}
+</style>
 </head>
 
 <body>
